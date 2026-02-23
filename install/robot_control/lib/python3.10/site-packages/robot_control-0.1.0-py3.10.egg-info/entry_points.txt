@@ -1,3 +1,0 @@
-[console_scripts]
-braccio_commander = robot_control.braccio_commander:main
-joint_state_republisher = robot_control.joint_state_republisher:main

@@ -24,6 +24,20 @@
 
 ---
 
+```
+ ____                      _
+| __ ) _ __ __ _  ___ ___ (_) ___
+|  _ \| '_ / _` |/ __/ __|| |/ _ \
+| |_) | | | (_| | (_| (__ | | (_) |
+|____/|_|  \__,_|\___\___||_|\___/
+
+  Starting Manual Control Interface
+  Author: Dilip Kumar
+  ROS2 Humble | MoveIt2 | MediaPipe CV
+```
+
+---
+
 ## 🤖 Project Overview
 
 **Braccio Robotic Arm Control** is a fully integrated ROS 2 Humble package for simulating, visualizing, and controlling the **Arduino Braccio 6DOF robotic arm** using a cutting-edge combination of:
@@ -281,9 +295,12 @@ Per-joint position, velocity, and acceleration limits enforced by MoveIt 2 durin
 - [x] Real-time HUD telemetry overlay
 - [x] MoveIt 2 integration with OMPL planning
 - [x] Gazebo physics simulation
+- [ ] 🔧 Arduino hardware serial bridge for real arm control
+- [ ] 📷 Object detection for autonomous pick-and-place
+- [ ] 🤖 Reinforcement learning for optimized trajectories
+- [ ] 🌐 Web dashboard for remote monitoring
 
-
---
+---
 
 ## 📄 License
 
