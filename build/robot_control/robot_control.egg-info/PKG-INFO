@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: robot_control
+Version: 0.1.0
+Summary: Braccio robotic arm control – ROS2 Humble port of braccio_moveit_gazebo
+Maintainer: dk
+Maintainer-email: dk@todo.todo
+License: Apache-2.0
+License-File: LICENSE
+Requires-Dist: setuptools
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Dynamic: license
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary

@@ -1,0 +1,60 @@
+[0.381s] Invoking command in '/home/dk/robotic_arm/src/robot_control': PYTHONPATH=/home/dk/robotic_arm/src/robot_control/build/robot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dk/robotic_arm/src/robot_control/install/robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/robot_control build --build-base /home/dk/robotic_arm/src/robot_control/build/robot_control/build install --record /home/dk/robotic_arm/src/robot_control/build/robot_control/install.log --single-version-externally-managed install_data
+[0.534s] running egg_info
+[0.543s] creating build/robot_control/robot_control.egg-info
+[0.543s] writing build/robot_control/robot_control.egg-info/PKG-INFO
+[0.544s] writing dependency_links to build/robot_control/robot_control.egg-info/dependency_links.txt
+[0.544s] writing entry points to build/robot_control/robot_control.egg-info/entry_points.txt
+[0.544s] writing requirements to build/robot_control/robot_control.egg-info/requires.txt
+[0.544s] writing top-level names to build/robot_control/robot_control.egg-info/top_level.txt
+[0.544s] writing manifest file 'build/robot_control/robot_control.egg-info/SOURCES.txt'
+[0.563s] reading manifest file 'build/robot_control/robot_control.egg-info/SOURCES.txt'
+[0.563s] adding license file 'LICENSE'
+[0.564s] writing manifest file 'build/robot_control/robot_control.egg-info/SOURCES.txt'
+[0.564s] running build
+[0.564s] running build_py
+[0.564s] creating /home/dk/robotic_arm/src/robot_control/build/robot_control/build/lib/robot_control
+[0.564s] copying robot_control/__init__.py -> /home/dk/robotic_arm/src/robot_control/build/robot_control/build/lib/robot_control
+[0.564s] copying robot_control/braccio_commander.py -> /home/dk/robotic_arm/src/robot_control/build/robot_control/build/lib/robot_control
+[0.564s] copying robot_control/joint_state_republisher.py -> /home/dk/robotic_arm/src/robot_control/build/robot_control/build/lib/robot_control
+[0.564s] running install
+[0.567s] running install_lib
+[0.576s] creating /home/dk/robotic_arm/src/robot_control/install/robot_control/lib/python3.10/site-packages/robot_control
+[0.576s] copying /home/dk/robotic_arm/src/robot_control/build/robot_control/build/lib/robot_control/__init__.py -> /home/dk/robotic_arm/src/robot_control/install/robot_control/lib/python3.10/site-packages/robot_control
+[0.576s] copying /home/dk/robotic_arm/src/robot_control/build/robot_control/build/lib/robot_control/braccio_commander.py -> /home/dk/robotic_arm/src/robot_control/install/robot_control/lib/python3.10/site-packages/robot_control
+[0.576s] copying /home/dk/robotic_arm/src/robot_control/build/robot_control/build/lib/robot_control/joint_state_republisher.py -> /home/dk/robotic_arm/src/robot_control/install/robot_control/lib/python3.10/site-packages/robot_control
+[0.576s] byte-compiling /home/dk/robotic_arm/src/robot_control/install/robot_control/lib/python3.10/site-packages/robot_control/__init__.py to __init__.cpython-310.pyc
+[0.576s] byte-compiling /home/dk/robotic_arm/src/robot_control/install/robot_control/lib/python3.10/site-packages/robot_control/braccio_commander.py to braccio_commander.cpython-310.pyc
+[0.579s] byte-compiling /home/dk/robotic_arm/src/robot_control/install/robot_control/lib/python3.10/site-packages/robot_control/joint_state_republisher.py to joint_state_republisher.cpython-310.pyc
+[0.579s] running install_data
+[0.579s] creating /home/dk/robotic_arm/src/robot_control/install/robot_control/share/ament_index/resource_index/packages
+[0.580s] copying resource/robot_control -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/ament_index/resource_index/packages
+[0.580s] copying package.xml -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control
+[0.580s] creating /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/launch
+[0.580s] copying launch/braccio_gazebo_moveit.launch.py -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/launch
+[0.580s] copying launch/display.launch.py -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/launch
+[0.580s] creating /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/config
+[0.580s] copying config/braccio.srdf -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/config
+[0.580s] copying config/joint_limits.yaml -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/config
+[0.580s] copying config/moveit_controllers.yaml -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/config
+[0.580s] copying config/kinematics.yaml -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/config
+[0.580s] copying config/ros2_controllers.yaml -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/config
+[0.580s] creating /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/urdf
+[0.580s] copying urdf/braccio.urdf.xacro -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/urdf
+[0.580s] creating /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/worlds
+[0.581s] copying worlds/bowl.dae -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/worlds
+[0.581s] copying worlds/braccio_world.world -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/worlds
+[0.581s] creating /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/stl
+[0.581s] copying stl/braccio_elbow.stl -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/stl
+[0.581s] copying stl/braccio_wrist_pitch.stl -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/stl
+[0.581s] copying stl/braccio_left_gripper.stl -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/stl
+[0.581s] copying stl/braccio_right_gripper.stl -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/stl
+[0.581s] copying stl/braccio_base.stl -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/stl
+[0.581s] copying stl/braccio_wrist_roll.stl -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/stl
+[0.581s] copying stl/braccio_shoulder.stl -> /home/dk/robotic_arm/src/robot_control/install/robot_control/share/robot_control/stl
+[0.581s] running install_egg_info
+[0.591s] Copying build/robot_control/robot_control.egg-info to /home/dk/robotic_arm/src/robot_control/install/robot_control/lib/python3.10/site-packages/robot_control-0.1.0-py3.10.egg-info
+[0.591s] running install_scripts
+[0.609s] Installing braccio_commander script to /home/dk/robotic_arm/src/robot_control/install/robot_control/lib/robot_control
+[0.609s] Installing joint_state_republisher script to /home/dk/robotic_arm/src/robot_control/install/robot_control/lib/robot_control
+[0.609s] writing list of installed files to '/home/dk/robotic_arm/src/robot_control/build/robot_control/install.log'
+[0.625s] Invoked command in '/home/dk/robotic_arm/src/robot_control' returned '0': PYTHONPATH=/home/dk/robotic_arm/src/robot_control/build/robot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dk/robotic_arm/src/robot_control/install/robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/robot_control build --build-base /home/dk/robotic_arm/src/robot_control/build/robot_control/build install --record /home/dk/robotic_arm/src/robot_control/build/robot_control/install.log --single-version-externally-managed install_data

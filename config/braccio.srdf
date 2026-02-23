@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<!--
+  SRDF for Braccio robotic arm (ROS2 Humble)
+  Ported from braccio_moveit_config/config/manipulator.srdf
+-->
+<robot name="braccio">
+  <!-- Planning Groups -->
+  <group name="braccio_arm">
+    <chain base_link="base_link" tip_link="link_5"/>
+  </group>
+  <group name="braccio_gripper">
+    <joint name="gripper_joint"/>
+    <joint name="sub_gripper_joint"/>
+  </group>
+
+  <!-- Named States -->
+  <group_state name="all_zero" group="braccio_arm">
+    <joint name="base_joint" value="1.5708"/>
+    <joint name="shoulder_joint" value="1.5708"/>
+    <joint name="elbow_joint" value="1.5708"/>
+    <joint name="wrist_pitch_joint" value="1.5708"/>
+    <joint name="wrist_roll_joint" value="1.5708"/>
+  </group_state>
+  <group_state name="home" group="braccio_arm">
+    <joint name="base_joint" value="1.5708"/>
+    <joint name="shoulder_joint" value="1.15"/>
+    <joint name="elbow_joint" value="0.13"/>
+    <joint name="wrist_pitch_joint" value="2.29"/>
+    <joint name="wrist_roll_joint" value="1.5708"/>
+  </group_state>
+  <group_state name="max_top" group="braccio_arm">
+    <joint name="base_joint" value="0"/>
+    <joint name="shoulder_joint" value="2.75"/>
+    <joint name="elbow_joint" value="0"/>
+    <joint name="wrist_pitch_joint" value="0"/>
+    <joint name="wrist_roll_joint" value="0"/>
+  </group_state>
+
+  <!-- Gripper named states -->
+  <group_state name="gripper_open" group="braccio_gripper">
+    <joint name="gripper_joint" value="0.2"/>
+    <joint name="sub_gripper_joint" value="0.2"/>
+  </group_state>
+  <group_state name="gripper_closed" group="braccio_gripper">
+    <joint name="gripper_joint" value="1.2"/>
+    <joint name="sub_gripper_joint" value="1.2"/>
+  </group_state>
+
+  <!-- Virtual joint: fixed base in world -->
+  <virtual_joint name="FixedBase" type="fixed" parent_frame="world" child_link="world"/>
+
+  <!-- End effector -->
+  <end_effector name="braccio_hand" parent_link="link_5" group="braccio_gripper"/>
+
+  <!-- Disable Collisions -->
+  <disable_collisions link1="base_link" link2="link_1" reason="Adjacent"/>
+  <disable_collisions link1="link_1" link2="link_2" reason="Adjacent"/>
+  <disable_collisions link1="link_2" link2="link_3" reason="Adjacent"/>
+  <disable_collisions link1="link_2" link2="link_4" reason="Never"/>
+  <disable_collisions link1="link_2" link2="link_5" reason="Never"/>
+  <disable_collisions link1="link_3" link2="link_4" reason="Adjacent"/>
+  <disable_collisions link1="link_3" link2="link_5" reason="Never"/>
+  <disable_collisions link1="link_4" link2="link_5" reason="Adjacent"/>
+  <disable_collisions link1="link_5" link2="right_gripper_link" reason="Adjacent"/>
+  <disable_collisions link1="link_5" link2="left_gripper_link" reason="Adjacent"/>
+  <disable_collisions link1="left_gripper_link" link2="right_gripper_link" reason="Adjacent"/>
+</robot>
