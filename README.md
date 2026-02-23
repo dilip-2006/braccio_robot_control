@@ -1,6 +1,5 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=3000&pause=1000&color=00D4FF&center=true&vCenter=true&width=700&lines=🦾+Braccio+Robotic+Arm+Control;ROS2+%2B+MoveIt2+%2B+Computer+Vision;Gesture-Powered+6DOF+Manipulation" alt="Typing SVG" />
 
 <br/>
 
