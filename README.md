@@ -4,32 +4,34 @@
 
 <br/>
 
----
-
+```text
+ ╭────────────────────────────────────────────────────────────╮
+ │                                                            │
+ │   ____                      _                              │
+ │  | __ ) _ __ __ _  ___ ___ (_) ___                         │
+ │  |  _ \| '__/ _` |/ __/ __|| |/ _ \                        │
+ │  | |_) | | | (_| | (_| (__ | | (_) |                       │
+ │  |____/|_|  \__,_|\___\___||_|\___/                        │
+ │                                                            │
+ │   ADVANCED KINEMATICS HUD        Professional Edition      │
+ │   ───────────────────────────────────────────────────      │
+ │   ROS2 Humble  |  MoveIt 2  |  MediaPipe CV  |  Gazebo     │
+ │                                                            │
+ ╰────────────────────────────────────────────────────────────╯
 ```
- ____                      _
-| __ ) _ __ __ _  ___ ___ (_) ___
-|  _ \| '__/ _` |/ __/ __|| |/ _ \
-| |_) | | | (_| | (_| (__ | | (_) |
-|____/|_|  \__,_|\___\___||_|\___/
 
-  Stack   :  ROS2 Humble  |  MoveIt2  |  MediaPipe CV  |  Gazebo
-```
+<br/>
 
-<p>
-  <img src="https://img.shields.io/badge/ROS2-Humble-blue?style=for-the-badge&logo=ros&logoColor=white" />
-  <img src="https://img.shields.io/badge/Python-3.10-yellow?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/MediaPipe-CV%20Control-brightgreen?style=for-the-badge&logo=google&logoColor=white" />
-  <img src="https://img.shields.io/badge/MoveIt2-Motion%20Planning-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Gazebo-Simulation-red?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/License-Apache%202.0-lightgrey?style=for-the-badge" />
-</p>
-
-<p>
+<p align="center">
+  <a href="#-tech-stack"><img src="https://img.shields.io/badge/ROS2-Humble-blue?style=for-the-badge&logo=ros&logoColor=white" /></a>
+  <a href="#-tech-stack"><img src="https://img.shields.io/badge/Python-3.10-yellow?style=for-the-badge&logo=python&logoColor=white" /></a>
+  <a href="#-tech-stack"><img src="https://img.shields.io/badge/MediaPipe-CV%20Control-brightgreen?style=for-the-badge&logo=google&logoColor=white" /></a>
+  <a href="#-tech-stack"><img src="https://img.shields.io/badge/MoveIt2-Motion%20Planning-orange?style=for-the-badge" /></a>
+  <br/>
   <img src="https://img.shields.io/badge/Build-Passing-success?style=flat-square" />
   <img src="https://img.shields.io/badge/RViz2-Visualization-purple?style=flat-square" />
   <img src="https://img.shields.io/badge/6DOF-Manipulator-cyan?style=flat-square" />
-  <img src="https://img.shields.io/badge/Maintained-Yes-brightgreen?style=flat-square" />
+  <img src="https://img.shields.io/badge/License-Apache%202.0-lightgrey?style=flat-square" />
 </p>
 
 </div>
