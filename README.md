@@ -4,6 +4,18 @@
 
 <br/>
 
+---
+
+```
+ ____                      _
+| __ ) _ __ __ _  ___ ___ (_) ___
+|  _ \| '__/ _` |/ __/ __|| |/ _ \
+| |_) | | | (_| | (_| (__ | | (_) |
+|____/|_|  \__,_|\___\___||_|\___/
+
+  Stack   :  ROS2 Humble  |  MoveIt2  |  MediaPipe CV  |  Gazebo
+```
+
 <p>
   <img src="https://img.shields.io/badge/ROS2-Humble-blue?style=for-the-badge&logo=ros&logoColor=white" />
   <img src="https://img.shields.io/badge/Python-3.10-yellow?style=for-the-badge&logo=python&logoColor=white" />
@@ -22,21 +34,6 @@
 
 </div>
 
----
-
-```
- ____                      _
-| __ ) _ __ __ _  ___ ___ (_) ___
-|  _ \| '_ / _` |/ __/ __|| |/ _ \
-| |_) | | | (_| | (_| (__ | | (_) |
-|____/|_|  \__,_|\___\___||_|\___/
-
-  Starting Manual Control Interface
-  Author: Dilip Kumar
-  ROS2 Humble | MoveIt2 | MediaPipe CV
-```
-
----
 
 ## 🤖 Project Overview
 
@@ -60,7 +57,7 @@
 | 🦾 **6DOF Manipulation** | Full articulation: base, shoulder, elbow, wrist pitch, wrist roll, gripper |
 | 🧠 **MoveIt 2 Integration** | OMPL-powered motion planning with collision avoidance |
 | 🌍 **Gazebo Simulation** | Physics simulation with ros2_control plugin |
-| 📊 **Real-time HUD** | Live joint telemetry dashboard overlaid on the webcam feed |
+| 📊 **Real-time HUD** | Live joint telemetry · arc gauges · FPS · mode indicator |
 | 🔄 **Joint State Publishing** | 20 Hz joint state broadcasting compatible with RViz 2 |
 | 🎯 **Geometric IK Solver** | Custom pick-and-place inverse kinematics |
 | 🛡️ **Joint Limit Enforcement** | Per-joint angle limits strictly enforced in all control modes |
@@ -85,7 +82,7 @@ robot_control/
 │
 ├── 📁 robot_control/              # Python ROS2 nodes
 │   ├── braccio_commander.py       # Pick-and-place commander (MoveIt2 API)
-│   ├── cv_hand_control.py         # MediaPipe gesture control node ⭐
+│   ├── cv_hand_control.py         # MediaPipe gesture control + HUD ⭐
 │   └── joint_state_republisher.py # Mimic joint state relay
 │
 ├── 📁 urdf/                       # Robot description (Xacro/URDF)
@@ -126,6 +123,23 @@ The `cv_hand_control.py` node streams your webcam and processes **two hands simu
 
 ---
 
+## 📊 HUD Overlay
+
+The professional Advanced Kinematics HUD displays live on the webcam feed:
+
+| HUD Element | Description |
+|---|---|
+| 🔲 **Corner brackets** | Animated pulsing brackets around all panels |
+| 📈 **Joint telemetry panel** | Per-joint bars with degree values, min/max labels |
+| 🔵 **Active joint arc gauge** | 240° circular sweep gauge for the selected joint |
+| 🎯 **Mode indicator** | `● IDLE` / `● TRACKING` / `● LOCKED` color-coded |
+| 📡 **FPS counter** | Live frames-per-second with health color |
+| 🕐 **Uptime clock** | Session uptime displayed in `MM:SS` |
+| 📏 **Vertical slider** | Right-hand position slider (red=locked, green=tracking) |
+| ➕ **Crosshair** | Tracks right hand target position |
+
+---
+
 ## 🦾 Robot Joint Specifications
 
 | Joint | Name | Range (rad) | Range (deg) |
@@ -147,13 +161,13 @@ Make sure you have the following installed on **Ubuntu 22.04**:
 - **MoveIt 2** for Humble
 - **Gazebo Classic** (with `gazebo_ros`)
 - **Python 3.10+**
-- **MediaPipe** + **OpenCV**
+- **MediaPipe** + **OpenCV** + **NumPy**
 
 ```bash
 # Install Python dependencies
-pip3 install mediapipe opencv-python
+pip3 install mediapipe opencv-python numpy
 
-# Install ROS2 MoveIt & controllers (if not already installed)
+# Install ROS2 MoveIt & controllers
 sudo apt install ros-humble-moveit \
                  ros-humble-ros2-control \
                  ros-humble-ros2-controllers \
@@ -166,12 +180,11 @@ sudo apt install ros-humble-moveit \
 ## 🚀 Installation & Build
 
 ```bash
-# 1. Clone the repository into your ROS2 workspace
-cd ~/ros2_ws/src
-git clone https://github.com/your-username/robot_control.git
+# 1. Clone the repository
+git clone https://github.com/dilip-2006/braccio_robot_control.git
+cd braccio_robot_control
 
-# 2. Install dependencies
-cd ~/ros2_ws
+# 2. Install ROS2 dependencies
 rosdep install --from-paths src --ignore-src -r -y
 
 # 3. Build the package
@@ -195,7 +208,7 @@ Launches **RViz2** with `joint_state_publisher_gui` for manual joint control via
 
 ---
 
-### 🖐️ Option 2 — Computer Vision Gesture Control
+### 🖐️ Option 2 — Computer Vision Gesture Control (Advanced HUD)
 
 ```bash
 ros2 launch robot_control cv_display.launch.py
@@ -203,7 +216,7 @@ ros2 launch robot_control cv_display.launch.py
 
 Launches:
 - **RViz2** for 3D visualization
-- **CV Hand Control Node** with webcam stream + live HUD
+- **CV Hand Control Node** — webcam stream with the professional live HUD
 - **Joint State Republisher** for synchronized display
 
 > ⚠️ **Webcam Required**: Ensure your webcam is connected and accessible at `/dev/video0`.
@@ -292,7 +305,7 @@ Per-joint position, velocity, and acceleration limits enforced by MoveIt 2 durin
 - [x] URDF/Xacro robot model with accurate joint limits
 - [x] RViz 2 visualization with pre-configured layout
 - [x] MediaPipe dual-hand gesture control (6DOF)
-- [x] Real-time HUD telemetry overlay
+- [x] Professional real-time HUD with arc gauges & telemetry
 - [x] MoveIt 2 integration with OMPL planning
 - [x] Gazebo physics simulation
 - [ ] 🔧 Arduino hardware serial bridge for real arm control
@@ -315,9 +328,9 @@ This project is licensed under the **Apache License 2.0** — see the [LICENSE](
 **Dilip Kumar**
 
 [![Email](https://img.shields.io/badge/Email-letsmaildilip%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:letsmaildilip@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github)](https://github.com/your-username)
+[![GitHub](https://img.shields.io/badge/GitHub-dilip--2006-181717?style=for-the-badge&logo=github)](https://github.com/dilip-2006)
 
-*Robotics Engineer | ROS 2 Developer | Computer Vision Enthusiast*
+*Robotics Engineer · ROS 2 Developer · Computer Vision Enthusiast*
 
 </div>
 
@@ -327,6 +340,6 @@ This project is licensed under the **Apache License 2.0** — see the [LICENSE](
 
 **⭐ If you found this project useful, please give it a star! ⭐**
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=14&duration=4000&pause=1000&color=00D4FF&center=true&vCenter=true&width=500&lines=Built+with+❤️+using+ROS2+%2B+Python+%2B+MediaPipe;Braccio+Arm+%7C+6DOF+%7C+Gesture+Control" alt="Footer" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=14&duration=4000&pause=1000&color=00D4FF&center=true&vCenter=true&width=500&lines=Built+with+❤️+using+ROS2+%2B+Python+%2B+MediaPipe;Braccio+Arm+|+6DOF+|+Gesture+Control" alt="Footer" />
 
 </div>
