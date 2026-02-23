@@ -295,12 +295,9 @@ class CVHandControlNode(Node):
         cv2.line(img, (0, 52), (w, 52), C_ACCENT, 1, cv2.LINE_AA)
 
         # Title
-        put_text(img, "BRACCIO", 14, 20,
+        put_text(img, "BRACCIO", 250, 30,
                  cv2.FONT_HERSHEY_DUPLEX, 0.65, C_ACCENT, 1)
-        put_text(img, "ADVANCED KINEMATICS HUD", 100, 20,
-                 cv2.FONT_HERSHEY_SIMPLEX, 0.45, C_WHITE, 1)
-        put_text(img, "v2.0  |  DILIP KUMAR", 100, 40,
-                 cv2.FONT_HERSHEY_SIMPLEX, 0.32, C_DIM, 1)
+       
 
         # FPS counter (top-right)
         fps_color = C_GREEN if self._fps > 24 else C_ORANGE
