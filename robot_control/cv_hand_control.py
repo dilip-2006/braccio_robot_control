@@ -291,30 +291,46 @@ class CVHandControlNode(Node):
         draw_scan_line(img, elapsed)
 
         # ── 2. Top header bar ────────────────────────────────────────────────
-        blend_rect(img, 0, 0, w, 52, C_PANEL, alpha=0.78)
-        cv2.line(img, (0, 52), (w, 52), C_ACCENT, 1, cv2.LINE_AA)
+        bar_h = 58
+        blend_rect(img, 0, 0, w, bar_h, C_PANEL, alpha=0.82)
+        # Bottom border line with dual accent
+        cv2.line(img, (0, bar_h),     (w, bar_h),     C_ACCENT, 1, cv2.LINE_AA)
+        cv2.line(img, (0, bar_h - 2), (w, bar_h - 2), (*C_ACCENT[:2], 40), 1, cv2.LINE_AA)
 
-        # Title
-        put_text(img, "BRACCIO", 250, 30,
-                 cv2.FONT_HERSHEY_DUPLEX, 0.65, C_ACCENT, 1)
-       
+        # ── LEFT: small robot icon text ──────────────────────────────────────
+        put_text(img, "[ BRACCIO ]", 14, 24,
+                 cv2.FONT_HERSHEY_DUPLEX, 0.52, C_ACCENT, 1)
+        put_text(img, "6DOF  ARM", 14, 46,
+                 cv2.FONT_HERSHEY_SIMPLEX, 0.32, C_DIM, 1)
 
-        # FPS counter (top-right)
+        # ── CENTER: main title (dynamically centered on frame width) ─────────
+        title     = "ADVANCED KINEMATICS HUD"
+        subtitle  = "MediaPipe  |  ROS2 Humble  |  Dilip Kumar"
+        (tw, _), _ = cv2.getTextSize(title,    cv2.FONT_HERSHEY_SIMPLEX, 0.55, 1)
+        (sw, _), _ = cv2.getTextSize(subtitle, cv2.FONT_HERSHEY_SIMPLEX, 0.30, 1)
+        cv2.putText(img, title,    (w // 2 - tw // 2, 24),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.55, C_WHITE,  1, cv2.LINE_AA)
+        cv2.putText(img, subtitle, (w // 2 - sw // 2, 44),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.30, C_DIM,    1, cv2.LINE_AA)
+        # Underline accent under title
+        cv2.line(img, (w // 2 - tw // 2, 28),
+                      (w // 2 + tw // 2, 28), C_ACCENT, 1, cv2.LINE_AA)
+
+        # ── RIGHT: FPS / uptime / status ─────────────────────────────────────
         fps_color = C_GREEN if self._fps > 24 else C_ORANGE
-        put_text(img, f"FPS  {self._fps:4.1f}", w - 110, 22,
-                 cv2.FONT_HERSHEY_SIMPLEX, 0.42, fps_color, 1)
-
-        # System blink indicator
-        blink_on = int(elapsed * 2) % 2 == 0
-        dot_col  = C_GREEN if blink_on else C_DIM
-        cv2.circle(img, (w - 22, 16), 5, dot_col, -1, cv2.LINE_AA)
-        put_text(img, "SYS LIVE" if blink_on else "SYS LIVE",
-                 w - 118, 42, cv2.FONT_HERSHEY_SIMPLEX, 0.30, dot_col, 1)
-
-        # Uptime
         m, s = divmod(int(elapsed), 60)
-        put_text(img, f"UP  {m:02d}:{s:02d}", w - 110, 42,
-                 cv2.FONT_HERSHEY_SIMPLEX, 0.30, C_DIM, 1)
+        blink_on = int(elapsed * 2) % 2 == 0
+        dot_col  = C_GREEN if blink_on else (40, 50, 60)
+
+        put_text(img, f"FPS  {self._fps:4.1f}", w - 112, 18,
+                 cv2.FONT_HERSHEY_SIMPLEX, 0.40, fps_color, 1)
+        put_text(img, f"UP   {m:02d}:{s:02d}",  w - 112, 34,
+                 cv2.FONT_HERSHEY_SIMPLEX, 0.40, C_DIM,     1)
+        cv2.circle(img, (w - 20, 47), 5, dot_col, -1, cv2.LINE_AA)
+        put_text(img, "LIVE" if blink_on else "LIVE", w - 112, 50,
+                 cv2.FONT_HERSHEY_SIMPLEX, 0.30, dot_col, 1)
+
+
 
         # ── 3. Corner brackets (full-frame) ──────────────────────────────────
         draw_corner_brackets(img, 6, 6, w - 6, h - 6,
